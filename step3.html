@@ -3,7 +3,7 @@
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>밥 약속 요청</title>
+    <title>Step 3</title>
     <style>
         body {
             font-family: Arial, sans-serif;
@@ -12,16 +12,19 @@
             align-items: center;
             height: 100vh;
             background-color: #f4f4f4;
-            text-align: center;
         }
         .container {
             background: white;
             padding: 20px;
             border-radius: 10px;
             box-shadow: 0 0 10px rgba(0, 0, 0, 0.1);
+            text-align: center;
+        }
+        h1 {
+            margin-bottom: 20px;
         }
         button {
-            margin-top: 10px;
+            margin: 10px;
             padding: 10px 20px;
             background: #007bff;
             color: white;
@@ -33,14 +36,16 @@
 </head>
 <body>
     <div class="container">
-        <h1>2월에 밥 한 번만 사주세요</h1>
-        <button onclick="nextPage()">확인</button>
+        <h1>저 이제 졸업하는데 아쉬우시죠ㅠㅠ</h1>
+        <button onclick="nextPage()">예</button>
+        <button onclick="nextPage()">아니오</button>
     </div>
 
     <script>
         function nextPage() {
-            window.location.href = "step4.html";  // 다음 단계로 이동
+            window.location.href = "/step4.html";  // step4 페이지로 이동
         }
     </script>
 </body>
 </html>
+
