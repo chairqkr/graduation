@@ -1,0 +1,20 @@
+<!DOCTYPE html>
+<html lang="ko">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>질문 1</title>
+</head>
+<body>
+    <h1>선생님 저 졸업하는데 아쉬우시죠ㅠㅠ</h1>
+    <button onclick="saveAnswer('예')">예</button>
+    <button onclick="saveAnswer('아니오')">아니오</button>
+
+    <script>
+        function saveAnswer(answer) {
+            localStorage.setItem('graduationAnswer', answer); // 선택한 답을 로컬스토리지에 저장
+            window.location.href = "step4.html";  // 4단계 페이지로 이동
+        }
+    </script>
+</body>
+</html>

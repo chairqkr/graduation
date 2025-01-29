@@ -1,0 +1,62 @@
+<!DOCTYPE html>
+<html lang="ko">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>2월 캘린더</title>
+</head>
+<body>
+    <h1>2025년 2월</h1>
+    
+    <!-- 추가된 문구들 -->
+    <p>클릭 가능한 날짜들만 제가 되는 날이에요</p>
+    <p>오후~저녁 기준으로 선택하세요</p>
+
+    <div id="calendar"></div>
+    <button onclick="submitDate()">선택 완료</button>
+
+    <script>
+        function generateCalendar() {
+            const calendarDiv = document.getElementById('calendar');
+            const daysInMonth = new Date(2025, 1, 0).getDate(); // 2025년 2월의 일수
+            const allowedDates = [7, 8, 10, 11, 18, 24]; // 선택 가능한 날짜들
+
+            let calendarHTML = '<table border="1"><tr>';
+            let dayCount = 1;
+            for (let day = 1; day <= daysInMonth; day++) {
+                // 선택할 수 있는 날짜만 버튼으로 활성화
+                if (allowedDates.includes(day)) {
+                    calendarHTML += `<td><button onclick="selectDate('${day}')">${day}</button></td>`;
+                } else {
+                    calendarHTML += `<td>${day}</td>`;  // 선택할 수 없는 날짜는 그냥 텍스트로 표시
+                }
+                dayCount++;
+                if (dayCount > 7) {
+                    dayCount = 1;
+                    calendarHTML += '</tr><tr>';
+                }
+            }
+            calendarHTML += '</tr></table>';
+            calendarDiv.innerHTML = calendarHTML;
+        }
+
+        let selectedDate = null;
+
+        function selectDate(day) {
+            selectedDate = day;
+            alert(`선택한 날짜: ${day}일`);
+        }
+
+        function submitDate() {
+            if (selectedDate) {
+                localStorage.setItem('selectedDate', selectedDate); // 선택한 날짜 저장
+                window.location.href = "step6.html";  // 6단계 페이지로 이동 (감사합니다 페이지)
+            } else {
+                alert('날짜를 선택해주세요.');
+            }
+        }
+
+        generateCalendar(); // 페이지 로드 시 캘린더 생성
+    </script>
+</body>
+</html>
