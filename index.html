@@ -3,16 +3,56 @@
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>선생님에게 보내는 메시지</title>
+    <title>이름 입력</title>
+    <style>
+        body {
+            font-family: Arial, sans-serif;
+            display: flex;
+            justify-content: center;
+            align-items: center;
+            height: 100vh;
+            background-color: #f4f4f4;
+        }
+        .container {
+            background: white;
+            padding: 20px;
+            border-radius: 10px;
+            box-shadow: 0 0 10px rgba(0, 0, 0, 0.1);
+            text-align: center;
+        }
+        input {
+            padding: 10px;
+            margin: 10px 0;
+            width: 200px;
+        }
+        button {
+            padding: 10px 20px;
+            background: #007bff;
+            color: white;
+            border: none;
+            border-radius: 5px;
+            cursor: pointer;
+        }
+    </style>
 </head>
 <body>
-    <h1>안녕하세요 선생님</h1>
-    <button onclick="nextPage()">확인</button>
+    <div class="container">
+        <h2>이름을 입력하세요</h2>
+        <input type="text" id="nameInput" placeholder="이름 입력">
+        <br>
+        <button onclick="goToNextPage()">확인</button>
+    </div>
 
     <script>
-        function nextPage() {
-            window.location.href = "step2.html";  // 두 번째 페이지로 이동
+        function goToNextPage() {
+            const name = document.getElementById('nameInput').value;
+            if (name.trim() === "") {
+                alert("이름을 입력하세요!");
+                return;
+            }
+            window.location.href = `step2.html?name=${encodeURIComponent(name)}`;
         }
     </script>
 </body>
 </html>
+
