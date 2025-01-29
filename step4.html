@@ -18,39 +18,5 @@
     </script>
 </body>
 </html>
-<!DOCTYPE html>
-<html lang="ko">
-<head>
-    <meta charset="UTF-8">
-    <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>응답 받기</title>
-</head>
-<body>
-    <h1>선택해주세요</h1>
-    <p>“선생님 저 졸업하는데 아쉬우시죠ㅠㅠ”</p>
-    <button onclick="saveResponse('예')">예</button>
-    <button onclick="saveResponse('아니오')">아니오</button>
 
-    <script>
-        function saveResponse(answer) {
-            const name = localStorage.getItem('name');  // 첫 번째 페이지에서 저장한 이름
-            const selectedDate = localStorage.getItem('selectedDate');  // 날짜 선택 정보
-
-            // 응답 저장
-            const response = {
-                name: name,
-                selectedDate: selectedDate,
-                answer: answer
-            };
-
-            // 로컬 스토리지에 응답 저장
-            const allResponses = JSON.parse(localStorage.getItem('allResponses')) || [];
-            allResponses.push(response);
-            localStorage.setItem('allResponses', JSON.stringify(allResponses));
-
-            // 다음 화면으로 넘어가기
-            window.location.href = "step5.html";  // 예시로 5단계로 넘어가는 페이지
-        }
-    </script>
-</body>
-</html>
+            
