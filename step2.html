@@ -4,10 +4,41 @@
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>선생님에게 보내는 메시지</title>
+    <style>
+        body {
+            font-family: Arial, sans-serif;
+            display: flex;
+            justify-content: center;
+            align-items: center;
+            height: 100vh;
+            background-color: #f4f4f4;
+        }
+        .container {
+            background: white;
+            padding: 20px;
+            border-radius: 10px;
+            box-shadow: 0 0 10px rgba(0, 0, 0, 0.1);
+            text-align: center;
+        }
+        h1 {
+            white-space: pre-line; /* 줄 바꿈 적용 */
+        }
+        button {
+            margin-top: 10px;
+            padding: 10px 20px;
+            background: #007bff;
+            color: white;
+            border: none;
+            border-radius: 5px;
+            cursor: pointer;
+        }
+    </style>
 </head>
 <body>
-    <h1>안녕하세요 선생님 저는 박예슬이에요</h1>
-    <button onclick="nextPage()">확인</button>
+    <div class="container">
+        <h1>안녕하세요 선생님<br>저는 박예슬이에요</h1>
+        <button onclick="nextPage()">확인</button>
+    </div>
 
     <script>
         function nextPage() {
