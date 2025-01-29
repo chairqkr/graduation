@@ -3,20 +3,49 @@
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>질문 2</title>
+    <title>Step 4</title>
+    <style>
+        body {
+            font-family: Arial, sans-serif;
+            display: flex;
+            justify-content: center;
+            align-items: center;
+            height: 100vh;
+            background-color: #f4f4f4;
+        }
+        .container {
+            background: white;
+            padding: 20px;
+            border-radius: 10px;
+            box-shadow: 0 0 10px rgba(0, 0, 0, 0.1);
+            text-align: center;
+        }
+        h1 {
+            margin-bottom: 20px;
+        }
+        button {
+            margin: 10px;
+            padding: 10px 20px;
+            background: #007bff;
+            color: white;
+            border: none;
+            border-radius: 5px;
+            cursor: pointer;
+        }
+    </style>
 </head>
 <body>
-    <h1>2월 중에 밥 한 번만 사주세요!!!!</h1>
-    <button onclick="saveAnswer('응')">응</button>
-    <button onclick="saveAnswer('아니')">아니</button>
+    <div class="container">
+        <h1>2월에 밥 한 번 사주세요!!!</h1>
+        <button onclick="nextPage()">응</button>
+        <button onclick="nextPage()">아니오</button>
+    </div>
 
     <script>
-        function saveAnswer(answer) {
-            localStorage.setItem('mealAnswer', answer); // 선택한 답을 로컬스토리지에 저장
-            window.location.href = "step5.html";  // 5단계 페이지로 이동
+        function nextPage() {
+            window.location.href = "/step5.html";  // step5 페이지로 이동
         }
     </script>
 </body>
 </html>
 
-            
